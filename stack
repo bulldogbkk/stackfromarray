@@ -1,4 +1,4 @@
-DECLARE stack Array[0-9] : <Data Type>
+DECLARE stack Array[0-9] OF <Data Type>
 DECLARE topPointer : INTEGER
 
 topPointer = -1
@@ -13,12 +13,13 @@ FUNCTION Push(item: <Data Type)
 ENDFUNCTION
 
 FUNCTION Pop() : <Data Type>
+  DECLARE item : <Data Type>
+  item <- null
   IF topPointer < 0 THEN
     OUTPUT("Error: Stack Empty, underflow")
   ELSE
     item <- stack[topPointer]
     topPointer <- topPointer - 1
-    RETURN item
   ENDIF
-  RETURN null
+  RETURN item
 ENDFUNCTION
