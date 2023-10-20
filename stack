@@ -1,0 +1,24 @@
+DECLARE stack Array[0-9] : <Data Type>
+DECLARE topPointer : INTEGER
+
+topPointer = -1
+
+FUNCTION Push(item: <Data Type)
+  IF topPointer+1 < LENGTH(stack)-1 THEN
+    topPointer <- topPointer + 1
+    stack[topPointer] <- item
+  ELSE
+    OUTPUT("ERROR: Stack is full, overflow")
+  ENDIF
+ENDFUNCTION
+
+FUNCTION Pop() : <Data Type>
+  IF topPointer < 0 THEN
+    OUTPUT("Error: Stack Empty, underflow")
+  ELSE
+    item <- stack[topPointer]
+    topPointer <- topPointer - 1
+    RETURN item
+  ENDIF
+  RETURN null
+ENDFUNCTION
